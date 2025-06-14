@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wikipédia Pitaya</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f4; color: #222; }
+    h1, h2, h3 { color: #d62828; }
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #d62828;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    button:hover { background: #b22222; }
+    section { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+  </style>
+  <script>
+    function alertaSeguranca() {
+      alert("⚠️ essa pagina tem maweres para a sua segurança! FECHE A ABA  IMEDIATAMENTE! ⚠️");
+    }
+  </script>
+</head>
+<body>
+  <section>
+    <h1>Pitaya</h1>
+    <p>A pitaya, também conhecida como fruta do dragão, é o fruto de várias espécies de cactos do gênero <em>Hylocereus</em> e <em>Selenicereus</em>. É popular pelo seu sabor doce, aparência exótica e propriedades nutricionais.</p>
+
+    <h2>Descrição</h2>
+    <p>A pitaya tem uma casca espessa de cor rosa ou amarela, com escamas verdes. A polpa pode ser branca, vermelha ou rosa, com pequenas sementes pretas comestíveis. É muito usada em sucos, sobremesas e saladas.</p>
+
+    <h2>Origem e Cultivo</h2>
+    <p>Originária das Américas, principalmente do México e América Central, a pitaya é cultivada em regiões tropicais e subtropicais do mundo todo. Exige clima quente, solo bem drenado e cuidados específicos para frutificar.</p>
+
+    <h2>Propriedades Nutricionais</h2>
+    <ul>
+      <li>Rica em vitamina C e antioxidantes.</li>
+      <li>Baixa em calorias e gorduras.</li>
+      <li>Fonte de fibras que auxiliam na digestão.</li>
+    </ul>
+
+    <h2>Curiosidades</h2>
+    <p>O nome “fruta do dragão” vem da aparência da casca que lembra as escamas de um dragão. Além disso, seu cultivo vem crescendo muito por causa da demanda por alimentos exóticos e saudáveis.</p>
+
+    <button id="downloadBtn">Baixar página completa</button>
+  </section>
+
+<script>
+  document.getElementById('downloadBtn').addEventListener('click', function() {
+    alertaSeguranca();
+    const htmlContent = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Página Offline - Pitaya</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f4; color: #222; }
+    h1, h2, h3 { color: #d62828; }
+    section { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+  <section>
+    <h1>Pitaya</h1>
+    <p>A pitaya, também conhecida como fruta do dragão, é o fruto de várias espécies de cactos do gênero <em>Hylocereus</em> e <em>Selenicereus</em>. É popular pelo seu sabor doce, aparência exótica e propriedades nutricionais.</p>
+
+    <h2>Descrição</h2>
+    <p>A pitaya tem uma casca espessa de cor rosa ou amarela, com escamas verdes. A polpa pode ser branca, vermelha ou rosa, com pequenas sementes pretas comestíveis. É muito usada em sucos, sobremesas e saladas.</p>
+
+    <h2>Origem e Cultivo</h2>
+    <p>Originária das Américas, principalmente do México e América Central, a pitaya é cultivada em regiões tropicais e subtropicais do mundo todo. Exige clima quente, solo bem drenado e cuidados específicos para frutificar.</p>
+
+    <h2>Propriedades Nutricionais</h2>
+    <ul>
+      <li>Rica em vitamina C e antioxidantes.</li>
+      <li>Baixa em calorias e gorduras.</li>
+      <li>Fonte de fibras que auxiliam na digestão.</li>
+    </ul>
+
+    <h2>Curiosidades</h2>
+    <p>O nome “fruta do dragão” vem da aparência da casca que lembra as escamas de um dragão. Além disso, seu cultivo vem crescendo muito por causa da demanda por alimentos exóticos e saudáveis.</p>
+  </section>
+</body>
+</html>`;
+
+    const blob = new Blob([htmlContent], {type: 'text/html'});
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'pitaya.html';
+    a.click();
+
+    URL.revokeObjectURL(url);
+  });
+</script>
+</body>
+</html>
